@@ -1,3 +1,4 @@
+# Импортируем json
 import json
 
 
@@ -6,6 +7,7 @@ def load_posts() -> list[dict]:
         return json.load(file)
 
 
+# Функция поиска результатов введенных пользователем
 def get_posts_by_word(word: str) -> list[dict]:
     result = []
     for post in load_posts():
@@ -14,6 +16,7 @@ def get_posts_by_word(word: str) -> list[dict]:
     return result
 
 
+# Функция по добавлению поста
 def add_post(post: dict) -> dict:
     posts: list[dict] = load_posts()
     posts.append(post)
